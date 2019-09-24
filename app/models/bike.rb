@@ -3,5 +3,6 @@ class Bike < ApplicationRecord
   belongs_to :user
   validates :brand, :model, :type, presence: true
   validates :type, inclusion: { in: TYPE }
+  has_many :availabilitys
 end
 
