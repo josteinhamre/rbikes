@@ -5,5 +5,6 @@ class Bike < ApplicationRecord
   validates :bike_type, inclusion: { in: TYPE }
   has_many :availabilities
   has_many :bikes
+  mount_uploader :photo, PhotoUploader
 end
 
