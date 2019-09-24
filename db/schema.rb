@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_09_24_105718) do
 
   # These are extensions that must be enabled in order to support this database
@@ -31,13 +32,25 @@ ActiveRecord::Schema.define(version: 2019_09_24_105718) do
     t.string "brand"
     t.integer "production_year"
     t.string "color"
-    t.string "type"
+    t.string "bike_type"
     t.text "description"
     t.string "photo"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_bikes_on_user_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.date "confirmed_at"
+    t.bigint "user_id"
+    t.bigint "bike_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bike_id"], name: "index_bookings_on_bike_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,4 +71,6 @@ ActiveRecord::Schema.define(version: 2019_09_24_105718) do
 
   add_foreign_key "availabilities", "bikes"
   add_foreign_key "bikes", "users"
+  add_foreign_key "bookings", "bikes"
+  add_foreign_key "bookings", "users"
 end
