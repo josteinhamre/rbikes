@@ -1,8 +1,8 @@
 class Bike < ApplicationRecord
   TYPE = %w[Road Mountain Hybrid TT BMX Cyclocross City]
   belongs_to :user
-  validates :brand, :model, :type, presence: true
-  validates :type, inclusion: { in: TYPE }
+  validates :brand, :model, :bike_type, presence: true
+  validates :bike_type, inclusion: { in: TYPE }
   has_many :availabilities
   has_many :bikes
 end
