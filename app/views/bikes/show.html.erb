@@ -1,2 +1,52 @@
-<h1>Bikes#show</h1>
-<p>Find me in app/views/bikes/show.html.erb</p>
+<div class="container">
+  <div class="card-trip-container">
+    <div class="card-trip-image">
+      <img src="https://images.finncdn.no/dynamic/1600w/2019/6/vertical-5/18/5/150/427/575_328148011.jpg">
+    </div>
+    <div class="card-trip-down">
+      <div class="card-trip-left">
+        <h2><%= @bike.brand %> - <%= @bike.model %></h2>
+        <p><%= @bike.description %></p>
+      </div>
+      <div class="card-trip-right">
+        <img src="<%= @bike.user.profile_picture %>" class="card-trip-user avatar-bordered" />
+        <p>Price: 12000NOK</p>
+        <p>Bike type: <%= @bike.bike_type %></p>
+        <p>Color: <%= @bike.color %></p>
+        <p>Production year: <%= @bike.production_year %></p>
+        <p>Location: <%= @bike.location %></p>
+        <div class="card-trip-left-book">
+          <%= link_to "Book now", "#", class: "btn btn-flat" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="bicycle-show">
+  <div class="bicycle-show-image">
+
+  </div>
+  <div class="bicycle-show-content">
+    <h1>Title</h1>
+    <h2>Category</h2>
+    <p>Description</p>
+    <p><strong>Mileage</strong>40,0000</p>
+    <p><strong>Group Set</strong>2,0000</p>
+    <div class="bicycle-show-content-datepicker">
+      <div class="from-date">
+        <label for=""></label>
+        <input type="text">
+      </div>
+      <div class="to-date">
+        <label for=""></label>
+        <input type="text">
+      </div>
+    </div>
+    <a href="/bookings">Book Bicycle</a>
+  </div>
+</div>
+
+ -->
+
