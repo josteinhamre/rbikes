@@ -25,7 +25,7 @@ puts "Seeding..."
     bike.brand = %w[Pinarello Trek Merckx BMC Cervelo Specialized Giant Focus Salsa Cannondale Felt Bianchi Merida Scott].sample
     bike.production_year = (2000..2019).to_a.sample
     bike.color = Faker::Color.color_name
-    bike.type = Bike::TYPE.sample
+    bike.bike_type = Bike::TYPE.sample
     bike.description = Faker::Lorem.sentences(number: 2)
     bike.photo = Faker::LoremFlickr.image(size: "500x300", search_terms: ['bicycle', "#{bike.brand}"], match_all: true)
     bike.location = user.location
