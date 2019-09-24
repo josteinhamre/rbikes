@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_24_085020) do
+ActiveRecord::Schema.define(version: 2019_09_24_105718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "availabilities", force: :cascade do |t|
+    t.date "from"
+    t.date "to"
+    t.bigint "bike_id"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bike_id"], name: "index_availabilities_on_bike_id"
+  end
 
   create_table "bikes", force: :cascade do |t|
     t.bigint "user_id"
@@ -38,9 +48,14 @@ ActiveRecord::Schema.define(version: 2019_09_24_085020) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "location"
+    t.string "profile_picture"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "availabilities", "bikes"
   add_foreign_key "bikes", "users"
 end
