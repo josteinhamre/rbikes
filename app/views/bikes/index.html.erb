@@ -1,21 +1,13 @@
-<div class="navbar-lewagon"> </div>
-<h1>Your search </h1>
 
+<div class="container">
 <% @bikes.each do |bike| %>
-<%= bike.model %>
-<%= bike.bike_type %>
-<%= bike.brand %>
-<%= bike.production_year %>
-<% end %>
-
-
-
-<%# @bikes.each do |bike| %>
-<!-- <div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+<div class="card-product">
+  <img src="<%= bike.photo %>" alt="">
   <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
+    <h2><%= bike.brand %> - <%= bike.model %></h2>
+    <p><%= bike.description %></p>
+  <!--   <p><%= bike.photo %></p> -->
   </div>
-</div> -->
-<%# end %>
+</div>
+<% end %>
+</div>

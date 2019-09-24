@@ -27,7 +27,7 @@ puts "Seeding..."
     bike.color = Faker::Color.color_name
     bike.bike_type = Bike::TYPE.sample
     bike.description = Faker::Lorem.sentences(number: 2)
-    bike.photo = Faker::LoremFlickr.image(size: "500x300", search_terms: ['bicycle', "#{bike.brand}"], match_all: true)
+    bike.photo = "https://images.finncdn.no/dynamic/1600w/2019/6/vertical-5/18/5/150/427/575_328148011.jpg"
     bike.location = user.location
     bike.save!
     puts bike.brand
