@@ -16,7 +16,7 @@
         <p>Production year: <%= @bike.production_year %></p>
         <p>Location: <%= @bike.location %></p>
         <div class="card-trip-left-book">
-          <%= link_to "Book now", "#", class: "btn btn-flat" %>
+          <%= link_to "Book now", new_bike_booking_path(@bike), class: "btn btn-flat" %>
         </div>
       </div>
     </div>
