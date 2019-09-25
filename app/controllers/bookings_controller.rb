@@ -17,6 +17,12 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.confirmed_at = Date.today
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def booking_params

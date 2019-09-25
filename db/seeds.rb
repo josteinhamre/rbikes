@@ -27,7 +27,8 @@ puts "Seeding..."
   user.first_name = Faker::Name.first_name
   user.last_name = Faker::Name.last_name
   user.location = Faker::Address.city
-  user.profile_picture = Faker::LoremFlickr.image(size: "300x300", search_terms: ['portrait'])
+  profile_picture = "https://source.unsplash.com/500x500/?headshot"
+  user.remote_profile_picture_url = profile_picture
   user.save!
   puts "User saved..."
   puts "Creating bikes for user..."
