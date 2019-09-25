@@ -6,9 +6,13 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @bike = Bike.find(params[:bike_id])
+    @booking.bike = @bike
+    @booking.user = current_user
     if @booking.save
       redirect_to bike_path(@bike)
     else
+      # raise
       render 'new'
     end
   end
