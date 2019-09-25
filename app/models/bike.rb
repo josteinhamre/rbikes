@@ -7,4 +7,3 @@ class Bike < ApplicationRecord
   has_many :bikes
   mount_uploader :photo, PhotoUploader
 end
-
