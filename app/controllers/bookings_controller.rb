@@ -21,6 +21,9 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.confirmed_at = Date.today
+    unless @booking.save
+      flash[:alert] = "Unable to confirm booking!"
+    end
     redirect_to user_path(current_user)
   end
 
