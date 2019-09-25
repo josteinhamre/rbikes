@@ -3,12 +3,13 @@
     <div class="col-6">
       <h2>Booking dates</h2>
       <%= simple_form_for [@bike, @booking] do |b| %>
-        <%= b.input :start_date %>
-        <%= b.input :end_date %>
-        <%= b.button :submit, class: 'btn btn-primary' %>
-        <% end %>
+      <%= b.input :start_date %>
+      <%= b.input :end_date %>
+      <%= b.button :submit, class: 'btn btn-primary' %>
+      <% end %>
     </div>
-      <img class="col-6" src="https://images.finncdn.no/dynamic/1600w/2019/6/vertical-5/18/5/150/427/575_328148011.jpg">
+    <div class="col-6"> <%= cl_image_tag @bike.photo %>
+    </div>
   </div>
 </div>
 

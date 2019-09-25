@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://res.cloudinary.com/lightglance/image/upload/v1569331354/rbike-logo_ypxp6n.png" %>
-    <h2>RBIKES</h2>
+  <%= image_tag "https://res.cloudinary.com/lightglance/image/upload/v1569331354/rbike-logo_ypxp6n.png" %>
+  <h2>RBIKES</h2>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,17 +20,19 @@
       <li class="nav-item dropdown">
         <% if user_signed_in? %>
         <% if current_user.profile_picture %>
-        <%= image_tag current_user.profile_picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <%= cl_image_tag current_user.profile_picture, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% else %>
-        <%= image_tag "https://horizongoodwill.org/wp-content/uploads/2018/11/dummy-profile-pic.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <%end %>
-          <%else %>
-          <%= link_to "Sign in", new_user_session_path %>
-          <% end %>
+        <%= cl_image_tag current_user.profile_picture %>
+        <%end %>
+        <%else %>
+        <%= link_to "Sign in", new_user_session_path %>
+        <% end %>
 
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Sign out", destroy_user_session_path, method: "delete", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
+          <% if user_signed_in? %>
+          <%= link_to "Show Profile", user_path(current_user), class: "dropdown-item" %>
+          <%= link_to "Sign out", destroy_user_session_path(current_user), method: "delete", class: "dropdown-item" %>
+          <% end %>
         </div>
       </li>
     </ul>

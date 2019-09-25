@@ -10,11 +10,18 @@ class BookingsController < ApplicationController
     @booking.bike = @bike
     @booking.user = current_user
     if @booking.save
+      flash[:notice] = "Your booking has successfully been submitted!"
       redirect_to bike_path(@bike)
     else
       # raise
       render 'new'
     end
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.confirmed_at = Date.today
+    redirect_to user_path(current_user)
   end
 
   private
