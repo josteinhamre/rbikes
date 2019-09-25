@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     @booking.bike = @bike
     @booking.user = current_user
     if @booking.save
+      flash[:notice] = "Your booking has successfully been submitted!"
       redirect_to bike_path(@bike)
     else
       # raise
