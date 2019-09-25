@@ -1,20 +1,17 @@
 
 <div class="container">
-<% @bikes.each do |bike| %>
-<div class="card-product">
-
+  <% @bikes.each do |bike| %>
+  <div class="card-product card-product-index">
     <%= link_to bike_path(bike) do %>
-  <%= cl_image_tag bike.photo %>
-<%end %>
-  <div class="card-product-infos">
-    <%= link_to "#{bike.brand} – #{bike.model}", bike_path(bike), class: "a-primary" %>
-    <p><%= bike.description %></p>
-  <p class="product-card-pricing">999 NOK</p>
-
-
+    <%= cl_image_tag bike.photo %>
+    <%end %>
+    <div class="card-product-infos">
+      <%= link_to "#{bike.brand} – #{bike.model}", bike_path(bike), class: "a-primary" %>
+      <p><%= bike.description %></p>
+      <p class="product-card-pricing">999 NOK</p>
+    </div>
   </div>
-</div>
-<% end %>
+  <% end %>
 
 </div>
 
