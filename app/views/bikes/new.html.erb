@@ -1,2 +1,19 @@
-<h1>Bikes#new</h1>
-<p>Find me in app/views/bikes/new.html.erb</p>
+<h1 class= form-title>Add a bike for rent</h1>
+
+<div class="container">
+ <%= simple_form_for @bike do |f| %>
+  <%= f.input :model %>
+  <%= f.input :brand %>
+  <%= f.input :production_year %>
+  <%= f.input :color %>
+  <%= f.input :bike_type, as: :select, collection: %w[Road Mountain Hybrid TT BMX Cyclocross City]%>
+  <%= f.input :description %>
+  <%= f.input :photo %>
+  <%= f.input :location %>
+
+
+   <%= f.submit "add a bike", class: "btn btn-primary" %>
+</div>
+<% end %>
+
+
