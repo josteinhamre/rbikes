@@ -1,2 +1,47 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col">
+      <h2>Booking dates</h2>
+      <%= simple_form_for [@bike, @booking] do |b| %>
+        <%= b.input :start_date %>
+        <%= b.input :end_date %>
+        <%= b.button :submit, class: 'btn btn-primary' %>
+        <% end %>
+    </div>
+     <div class="col bike-image">
+       <img src="https://images.finncdn.no/dynamic/1600w/2019/6/vertical-5/18/5/150/427/575_328148011.jpg">
+     </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+  <div class="bicycle-image">
+    <img src="https://images.finncdn.no/dynamic/1600w/2019/6/vertical-5/18/5/150/427/575_328148011.jpg">
+  </div>
+  <div class="booking-details">
+    <h2>Choose your dates</h2>
+    <div class="bicycle-show-content-datepicker">
+      <div class="from-date">
+        <label for=""><%= @booking.start_date %>From:</label>
+        <input type="text">
+      </div>
+      <div class="to-date">
+        <label for=""><%= @booking.end_date %>To:</label>
+        <input type="text">
+      </div>
+    </div>
+    <a href="/bookings"><%= link_to "Book now", "#", class: "btn btn-flat" %>Book now</a>
+  </div>
+</div> -->
