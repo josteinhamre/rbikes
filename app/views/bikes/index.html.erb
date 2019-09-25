@@ -4,7 +4,7 @@
 <div class="card-product">
 
     <%= link_to bike_path(bike) do %>
-  <%= cl_image_tag "photo-1470347051932-8ca24b11b3e3_qauwz4.jpg" %>
+  <%= cl_image_tag bike.photo %>
 <%end %>
   <div class="card-product-infos">
     <%= link_to "#{bike.brand} – #{bike.model}", bike_path(bike), class: "a-primary" %>
