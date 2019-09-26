@@ -1,22 +1,28 @@
 <div class="container">
-  <div class="card-trip-container">
+  <div class="card-trip-container mt-5 mb-5 ">
     <div class="card-trip-image">
       <%= cl_image_tag @bike.photo %>
     </div>
     <div class="card-trip-down">
-      <div class="card-trip-left">
-        <h2><%= @bike.brand %> - <%= @bike.model %></h2>
-        <p><%= @bike.description %></p>
+      <div class="card-down-header">
+        <h3><%= @bike.brand %> - <%= @bike.model %></h3>
+        <div class="profile-and-name">
+          <h5 class="mr-3"><%= @bike.user.first_name %></h5>
+          <img src="<%= @bike.user.profile_picture %>" class=" avatar-bordered avatar-position" />
+        </div>
       </div>
-      <div class="card-trip-right">
-      <img src="<%= @bike.user.profile_picture %>" class=" avatar-bordered avatar-position" />
-        <p>Price: <%= @bike.price %> NOK a day</p>
-        <p>Bike type: <%= @bike.bike_type %></p>
-        <p>Color: <%= @bike.color %></p>
-        <p>Production year: <%= @bike.production_year %></p>
-        <p>Location: <%= @bike.location %></p>
-        <div class="card-trip-left-book">
-          <%= link_to "Book now", new_bike_booking_path(@bike), class: "btn btn-flat" %>
+      <div class="card-groups">
+        <div class="card-trip-left pr-5">
+          <p><%= @bike.description %></p>
+        </div>
+        <div class="card-trip-right">
+          <p>Price: <%= @bike.price %> NOK a day</p>
+          <p>Bike type: <%= @bike.bike_type %></p>
+          <p>Production year: <%= @bike.production_year %></p>
+          <p>Location: <%= @bike.location %></p>
+          <div class="card-trip-left-book">
+            <%= link_to "Book now", new_bike_booking_path(@bike), class: "btn btn-flat" %>
+          </div>
         </div>
       </div>
     </div>
@@ -48,5 +54,5 @@
   </div>
 </div>
 
- -->
+-->
 
