@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     unless @booking.save
       flash[:alert] = "Unable to confirm booking!"
     end
-    redirect_to user_path(current_user)
+    redirect_to profile_path
   end
 
   private

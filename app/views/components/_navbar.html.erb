@@ -33,7 +33,7 @@
 
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <% if user_signed_in? %>
-          <%= link_to "Show Profile", user_path(current_user), class: "dropdown-item" %>
+          <%= link_to "Show Profile", profile_path, class: "dropdown-item" %>
           <%= link_to "Sign out", destroy_user_session_path(current_user), method: "delete", class: "dropdown-item" %>
           <% end %>
         </div>
