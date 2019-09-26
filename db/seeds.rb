@@ -35,8 +35,8 @@ BikeDescriptions = [
   user.first_name = Faker::Name.first_name
   user.last_name = Faker::Name.last_name
   user.location = Faker::Address.city
-  # profile_picture = "https://source.unsplash.com/500x500/?headshot"
-  profile_picture = "https://images.unsplash.com/photo-1498529605908-f357a9af7bf5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+  profile_picture = "https://source.unsplash.com/500x500/?headshot"
+  # profile_picture = "https://images.unsplash.com/photo-1498529605908-f357a9af7bf5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
   user.remote_profile_picture_url = profile_picture
   user.save!
   puts "User saved..."
