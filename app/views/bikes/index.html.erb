@@ -7,7 +7,7 @@
         <div class="card-product-infos">
           <h2><%= link_to "#{bike.brand} – #{bike.model}", bike_path(bike), class: "a-primary" %></h2>
           <p><%= bike.description %></p>
-          <p class="product-card-pricing">400 NOK a day</p>
+          <p class="product-card-pricing"><%= bike.price %> NOK a day</p>
         </div>
       </div>
     <% end %>
