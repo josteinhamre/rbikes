@@ -4,6 +4,8 @@
   margin-bottom: 10px;
   background-color: white;
   opacity: 0.9;
+  border-radius: 4px;
+  display:inline;
 }
 
 #start_date {
@@ -12,17 +14,25 @@
   margin-bottom: 10px;
   background-color: white;
   opacity: 0.9;
+  border-radius: 4px;
+  display: inline-block;
 
 }
-
 .calendar {
   margin-left: 160px;
-  opacity: 0.9;
+  opacity: 0.8;
+  color: white;
+
 }
 .calendar-label {
   color: white;
   margin-top: 20px;
   margin-bottom: 5px;
+  border-radius: 3px;
+
+.date-form {
+  display: flex !important;
+}
 
 
 }
@@ -33,6 +43,13 @@
   color: white;
   font-size: 24px;
 
+}
 
+.flatpickr-days {
+  color: white;
+}
+.submit {
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
