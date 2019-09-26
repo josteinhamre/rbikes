@@ -1,27 +1,36 @@
-<div class="row align-items-center m-5">
+<div class="row">
+
+<div class="row col-12 offset-0 col-lg-8 offset-lg-1 col-xl-6 offset-xl-2">
   <div>
-    <h1 class="offset-3 col-6 text-white mt-5">RBIKES. For Bikers By Bikers.</h1>
-    <p class="description offset-6 col-3 text-white mt-5"> Rbikes enables you to rent or rent out your bike. Want to rent out your bike? That never was easier! Want to go for a ride? Check out the bikes for rent!</p>
+    <h1 class=" text-white mt-5">RBIKES. For Bikers. By Bikers.</h1>
+    <p class="description text-white mt-5"> Want to rent out your bike? It's never been easier! Want to go for a ride? Check out the bikes for rent!</p>
   </div>
-  <%= link_to "Check out available bikes", bikes_path, class: "btn btn-flat offset-6 col-3 text-white mt-5" %>
-</div>
+  <%= link_to "Check out available bikes", bikes_path, class: "btn btn-flat offset-8 col-4 text-white mt-5" %>
+  </div>
 
-<div class= "search-text offset-2 col-4">
+<div class= "search-text col-12 offset-0 col-lg-8 offset-lg-1 col-xl-6 offset-xl-2">
   <h2> Search for bikes </h2>
-</div>
-
-<div class="calendar">
 
   <%= form_with(url: bikes_path, method: "get") do %>
-    <div class= "calendar-label">
+    <div class="d-flex justify-content-between">
+    <div class="start-date">
 
-    <%= text_field_tag :start_date, "Start date" %>
-    <div class= "calendar-label">
+      <h4>Start date</h4>
+    <%= text_field_tag :start_date, "Start date", class: "d-none" %>
+    </div>
+
+    <div class= "end-date">
+      <h4>End date</h4>
+
+    <%= text_field_tag :end_date, "End date", class: "d-none" %>
 
     </div>
-    <%= text_field_tag :end_date, "End date" %>
-    <div class="submit">
-      <%= submit_tag "Search", class: "btn btn-primary offset-0 col-2 text-white mt-5"%>
+
+
+  </div>
+    <div class="d-flex justify-content-end">
+
+      <%= submit_tag "Search", class: "btn btn-primary px-5 py-2 text-white mt-5"%>
     </div>
     <% end %>
   </div>

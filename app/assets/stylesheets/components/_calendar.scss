@@ -5,7 +5,6 @@
   background-color: white;
   opacity: 0.9;
   border-radius: 4px;
-  display:inline;
 }
 
 #start_date {
@@ -15,7 +14,6 @@
   background-color: white;
   opacity: 0.9;
   border-radius: 4px;
-  display: inline-block;
 
 }
 .calendar {
@@ -52,4 +50,9 @@
   margin-top: 5px;
   margin-bottom: 20px;
 }
-
+.start-date {
+color: white;
+}
+.end-date {
+  color: white;
+}
