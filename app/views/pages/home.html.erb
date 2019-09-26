@@ -1,18 +1,18 @@
 <div class="row">
-
-<div class="row col-12 offset-0 col-lg-8 offset-lg-1 col-xl-6 offset-xl-2">
+<div class="banner-home col-12">
+<div class="row col-12 offset-0 col-lg-8 offset-lg-4 col-xl-6 offset-xl-2 my-4">
   <div>
-    <h1 class=" text-white mt-5">RBIKES. For Bikers. By Bikers.</h1>
-    <p class="description text-white mt-5"> Want to rent out your bike? It's never been easier! Want to go for a ride? Check out the bikes for rent!</p>
+    <h1 class="my-5">RBIKES. By Bikers. For Bikers.</h1>
   </div>
-  <%= link_to "Check out available bikes", bikes_path, class: "btn btn-flat offset-8 col-4 text-white mt-5" %>
+  <%= link_to "Explore bikes", bikes_path, class: "btn btn-home col-4 my-5 mr-5" %>
+  <%= link_to "Rent out my bike", bikes_path, class: "btn btn-home col-4 m-5" %>
   </div>
-
-<div class= "search-text col-12 offset-0 col-lg-8 offset-lg-1 col-xl-6 offset-xl-2">
-  <h2> Search for bikes </h2>
+</div>
+<div class= "search-text col-12 offset-0 col-lg-8 offset-lg-1 col-xl-6 offset-xl-2 mt-5">
+  <h2>Explore by date</h2>
 
   <%= form_with(url: bikes_path, method: "get") do %>
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between mt-3">
     <div class="start-date">
 
       <h4>Start date</h4>

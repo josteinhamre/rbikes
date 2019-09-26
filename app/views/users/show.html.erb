@@ -1,5 +1,5 @@
-<div class="row">
-    <div class="c   ">
+<div class="row m-0">
+    <div class="col-12 offset-0 col-lg-8 offset-lg-1 col-xl-6 offset-xl-2">
         <div class="tab">
             <button class="tablinks active-tab" id="bikesTab">My Bikes</button>
             <button class="tablinks" id="bookingsTab">My Bookings</button>
@@ -41,10 +41,10 @@
             <% end %>
     </div>
 </div>
-    <div class="card-profile margin-top-15 col-12 col-lg-2 col-xl-2 px-0">
+    <div class="card-profile margin-top-15 col-12 col-lg-2 col-xl-2 px-0 align-self-start">
         <%= cl_image_tag current_user.profile_picture %>
-        <div class="card-profile-infos">
-            <h1><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h1>
+        <div class="card-profile-infos m-3">
+            <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h3>
         </div>
     </div>
 </div>

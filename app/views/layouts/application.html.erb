@@ -10,7 +10,9 @@
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
 <body>
+  <% unless controller.controller_name == "pages" %>
   <%= render 'components/navbar' %>
+  <% end %>
   <!--   <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
     <% if notice %>
