@@ -10,7 +10,7 @@
       </div>
       <div class="card-trip-right">
       <img src="<%= @bike.user.profile_picture %>" class=" avatar-bordered avatar-position" />
-        <p>Price: 400 NOK a day</p>
+        <p>Price: <%= @bike.price %> NOK a day</p>
         <p>Bike type: <%= @bike.bike_type %></p>
         <p>Color: <%= @bike.color %></p>
         <p>Production year: <%= @bike.production_year %></p>
