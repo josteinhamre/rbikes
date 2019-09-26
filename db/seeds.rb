@@ -18,7 +18,7 @@ def scrape_finn_sykler(brand)
 end
 
 
-# BikePhotots = ["Bikes/o9abnqonczwr0obqcvv1.jpg", "Bikes/dp83zthl0qbh2riu3gld.jpg", "Bikes/z8ifc0wph9wd39tvs4h0.jpg", "Bikes/sggegv7cgddflq7bukkw.jpg", "Bikes/qdp07a9cvys12nplc4vz.jpg", "Bikes/tqpv2keeszajzdlch3r5.jpg", "Bikes/jqgq41qdfijty6scvaz2.jpg", "Bikes/bdoxu0z7rgv3clbf3ylx.jpg", "Bikes/x9n9lpx5umkytrandv3u.jpg", "Bikes/ontxbkfodulofmyxsgqp.jpg", "Bikes/stmztbucpjcardauvcwd.jpg", "Bikes/xzm5mqc7dskpqkpuodrz.jpg", "Bikes/fsb02fmtal0b1a2fgcph.jpg", "Bikes/mwuzvqp5hetyqtpz0qbv.jpg", "Bikes/xu0emfbofhfkd8ovoffe.jpg", "Bikes/tuongritzbrumf8dicoq.jpg", "Bikes/jdq5wi9pc7sb1zvnfvs2.jpg", "Bikes/w5z1loiktkcdn9yh40in.jpg", "Bikes/lrwavskarxhbqxoly9x4.jpg", "Bikes/iedfs5xnqacu6ewcdf1l.jpg",]
+BikeDescriptions = ["Bikes/o9abnqonczwr0obqcvv1.jpg", "Bikes/dp83zthl0qbh2riu3gld.jpg", "Bikes/z8ifc0wph9wd39tvs4h0.jpg", "Bikes/sggegv7cgddflq7bukkw.jpg", "Bikes/qdp07a9cvys12nplc4vz.jpg", "Bikes/tqpv2keeszajzdlch3r5.jpg", "Bikes/jqgq41qdfijty6scvaz2.jpg", "Bikes/bdoxu0z7rgv3clbf3ylx.jpg", "Bikes/x9n9lpx5umkytrandv3u.jpg", "Bikes/ontxbkfodulofmyxsgqp.jpg", "Bikes/stmztbucpjcardauvcwd.jpg", "Bikes/xzm5mqc7dskpqkpuodrz.jpg", "Bikes/fsb02fmtal0b1a2fgcph.jpg", "Bikes/mwuzvqp5hetyqtpz0qbv.jpg", "Bikes/xu0emfbofhfkd8ovoffe.jpg", "Bikes/tuongritzbrumf8dicoq.jpg", "Bikes/jdq5wi9pc7sb1zvnfvs2.jpg", "Bikes/w5z1loiktkcdn9yh40in.jpg", "Bikes/lrwavskarxhbqxoly9x4.jpg", "Bikes/iedfs5xnqacu6ewcdf1l.jpg",]
 puts "Seeding..."
 7.times do
   user = User.new
@@ -38,9 +38,10 @@ puts "Seeding..."
     bike.model = Faker::ElectricalComponents.active
     bike.brand = %w[Pinarello Trek Merckx BMC Cervelo Specialized Giant Focus Salsa Cannondale Felt Bianchi Merida Scott].sample
     bike.production_year = (2000..2019).to_a.sample
+    bike.price = (200..600).to_a.sample.round(-1)
     bike.color = Faker::Color.color_name
     bike.bike_type = Bike::TYPE.sample
-    bike.description = Faker::Lorem.paragraphs[0]
+    bike.description = BikeDescriptions.to_a.sample
     finn_url = scrape_finn_sykler(bike.brand)
     bike.remote_photo_url = finn_url
     bike.location = user.location
