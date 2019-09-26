@@ -6,6 +6,7 @@
   overflow: hidden;
   background: black;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
 }
 
 .card-trip-image > img {
@@ -15,22 +16,41 @@
 }
 
 .card-trip-down {
-  padding: 40px;
-  display: flex;
+  padding: 20px 30px;
   background-color: white;
   justify-content: space-between;
+  position: relative;
+}
+
+.card-down-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-groups {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-top: 15px;
 }
 
 .card-trip-right {
   display: flex;
   flex-direction: column;
   align-item: flex-end;
-  position: relative;
 }
 
 .avatar-position {
-  position: absolute;
-  right: 0px;
-  top: -75px;
-
+  display: flex;
+  right: 150px;
+  top: 5px;
 }
+
+.profile-and-name {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 34px;
+  top: 9px;
+  padding-right: 15px;
+}
+
