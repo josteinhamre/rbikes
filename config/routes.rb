@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :bikes, only: [:index, :show, :new, :create ] do
     resources :bookings, only: [:new, :create, :update]
   end
-  resources :users, only: [:show]
+  get '/profile', to: 'users#show', as: 'profile'
+
+
 end

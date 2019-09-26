@@ -1,0 +1,29 @@
+.tabcontent {
+  display: none;
+}
+
+.active-tab {
+  background-color: #BBBBBB;
+  font-weight: bold;
+}
+
+.active {
+  display: block;
+}
+
+.tab {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.tablinks {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+button:focus {
+  outline:0;
+}

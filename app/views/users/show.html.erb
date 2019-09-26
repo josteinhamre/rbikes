@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card-product">
+  <div class="card-product margin-top-15">
     <%= cl_image_tag current_user.profile_picture %>
     <div class="card-product-infos">
       <h1><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h1>
@@ -7,30 +7,49 @@
     </div>
   </div>
 
-  <% current_user.bikes.each do |bike| %>
-  <div class="card-with-bookings">
-    <div class="card-product-with-bookings">
-      <%= link_to bike_path(bike) do %>
-      <%= cl_image_tag bike.photo %>
-      <%end %>
-      <div class="card-product-infos">
-        <%= link_to "#{bike.brand} – #{bike.model}", bike_path(bike), class: "a-primary" %>
-        <p><%= bike.description %></p>
-        <p class="product-card-pricing">999 NOK</p>
+
+  <div class="tab">
+    <button class="tablinks active-tab" id="bikesTab">My Bikes</button>
+    <button class="tablinks" id="bookingsTab">My Bookings</button>
+  </div>
+  <div id="bikes" class="tabcontent active">
+    <% current_user.bikes.each do |bike| %>
+    <div class="card-with-bookings">
+      <div class="card-product">
+        <%= link_to bike_path(bike) do %>
+        <%= cl_image_tag bike.photo %>
+        <%end %>
+        <div class="card-product-infos">
+          <%= link_to "#{bike.brand} – #{bike.model}", bike_path(bike), class: "a-primary" %>
+          <p><%= bike.description %></p>
+          <p class="product-card-pricing">999 NOK</p>
+        </div>
       </div>
-    </div>
-    <% bike.bookings.each do |booking| %>
-    <div class="card-booking">
-      <p><%= booking.user.first_name %> wants to rent this bike from <%= booking.start_date %> to <%= booking.end_date %></p>
-      <% if booking.confirmed_at %>
-        <h5>Booking Confirmed</h5>
-      <% else %>
+      <% bike.bookings.each do |booking| %>
+      <div class="card-booking margin-top-5">
+        <p><%= booking.user.first_name %> wants to rent this bike from <%= booking.start_date %> to <%= booking.end_date %></p>
+        <% if booking.confirmed_at %>
+        <h5>Confirmed</h5>
+        <% else %>
         <%= link_to "Confirm", bike_booking_path(bike, booking), method: "patch", class: "btn-flat" %>
+        <% end %>
+      </div>
       <% end %>
     </div>
     <% end %>
   </div>
-  <% end %>
-
-
+  <div id="bookings" class="tabcontent">
+    <% current_user.bikes.each do |bike| %>
+    <% bike.bookings.each do |booking| %>
+    <div class="card-booking margin-top-5">
+      <p><%= booking.user.first_name %> wants to rent this bike from <%= booking.start_date %> to <%= booking.end_date %></p>
+      <% if booking.confirmed_at %>
+      <h5>Booking Confirmed</h5>
+      <% else %>
+      <%= link_to "Confirm", bike_booking_path(bike, booking), method: "patch", class: "btn-flat" %>
+      <% end %>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>
