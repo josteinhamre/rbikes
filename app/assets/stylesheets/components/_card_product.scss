@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   border-radius: 4px;
+  height: 120px;
 }
 
 .margin-top-15 {
@@ -13,10 +14,6 @@
 
 .margin-top-5 {
   margin-top: 5px;
-}
-
-.card-product-index {
-  height: 120px;
 }
 
 .card-product img {
@@ -77,4 +74,13 @@ p.product-card-pricing {
 .card-booking h5 {
   color: #228B22;
   margin: 0;
+}
+
+.card-product {
+  transition: 0.4s;
+}
+
+.card-product:hover {
+  transform: scale(1.01);
+  text-decoration: none;
 }
