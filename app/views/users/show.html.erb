@@ -6,7 +6,7 @@
     </div>
     <div id="bikes" class="tabcontent">
       <% current_user.bikes.each do |bike| %>
-      <%= link_to bike_path(bike), class: "card-product card-product-index margin-top-15" do %>
+      <%= link_to bike_path(bike), class: "card-product margin-top-30" do %>
       <%= cl_image_tag bike.photo %>
       <div class="card-product-infos">
         <h2><%= bike.brand %> - <%= bike.model %></h2>
@@ -29,7 +29,7 @@
     <div id="bookings" class="tabcontent active">
       <% current_user.bookings.each do |booking| %>
       <div class="card-booking margin-top-5">
-        <p>You want to rent <strong><%= booking.bike.brand %> - <%= booking.bike.model %></strong> from <strong><%= booking.bike.user.first_name %></strong> on <strong><%= booking.start_date.strftime('%-d %b') %> - <%= booking.end_date.strftime('%-d %b') %></strong></p>
+        <p>You want to rent <strong><%= link_to "#{booking.bike.brand} - #{booking.bike.model}", bikes_path(booking.bike) %></strong> from <strong><%= booking.bike.user.first_name %></strong> on <strong><%= booking.start_date.strftime('%-d %b') %> - <%= booking.end_date.strftime('%-d %b') %></strong></p>
         <% if booking.confirmed_at %>
         <p class="text-success">Confirmed</p>
         <% else %>
