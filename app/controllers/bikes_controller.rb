@@ -1,13 +1,14 @@
 class BikesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
-    if params[].present
-
+    if params[:query].present?
+      @bikes = Bike.where("%#{params[:query]}%")
+  # sql_query = "daterange(start_date, end_date, '[]') && daterange(:start_date, :end_date, '[]')"
     else
     @bikes = Bike.all
+  # end
   end
-  end
-
+end
   def show
     @bike = Bike.find(params[:id])
   end
