@@ -16,14 +16,14 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: #349934;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
   background: #F5F5F5;
-  color: #1EDD88;
-  border-color: #D8D8D8;
+  color: #349934;
+  border-color: #349934;
 }
 
 .btn-gradient {
@@ -55,3 +55,27 @@
   color: #26323e;
   border-color: #D8D8D8;
 }
+
+.login {
+  padding: 1px;
+  margin: 5px 15px;
+}
+
+.btn-search {
+  color: #232F3A;
+  background: #F5F5F5;
+  transition: background 0.3s ease;
+}
+
+.btn-search:hover {
+  background-color: #232F3A;
+  color: #F5F5F5;
+  border-color: #D8D8D8;
+}
+
+
+
+
+
+
+
