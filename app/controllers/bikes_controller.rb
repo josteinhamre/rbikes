@@ -1,12 +1,24 @@
+require 'date'
+
 class BikesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
-    @bikes = Bike.all
+    if params[:start_date].present? #check for end_date at some point
+      start_date = Date.parse(params[:start_date])
+      end_date = Date.parse(params[:end_date])
+      @bikes = Bike.all
+      @bikes = @bikes.select do |bike|
+        bike.available_range?(start_date, end_date)
+      end
+    else
+      @bikes = Bike.all
+    end
   end
 
   def show
     @bike = Bike.find(params[:id])
   end
+
 
   def new
     @bike = Bike.new
