@@ -33,7 +33,7 @@
    <h5>Book this bike</h5>
    <%= simple_form_for [@bike, @booking] do |b| %>
       <%= b.input :start_date, as: "string", :input_html => { :class => 'd-none' } %>
-    <%= b.button :submit, class: 'btn btn-primary' %>
+    <%= b.button :submit, class: 'btn btn-home' %>
     <% end %>
 </div>
 </div>
