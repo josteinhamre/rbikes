@@ -29,12 +29,21 @@
     </div>
   </div>
 </div>
-<div class="card-profile margin-top-15 col-12 col-lg-2 col-xl-3 px-0 align-self-start p-2 mt-5">
+<% if current_user == @bike.user %>
+<div class="card-profile col-12 col-lg-2 col-xl-2 px-0 mt-5 align-self-start">
+    <%= cl_image_tag current_user.profile_picture %>
+    <div class="card-profile-infos m-3">
+      <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h3>
+    </div>
+  </div>
+  <% else %>
+<div class="card-profile margin-top-15 offset-0 offset-lg-1 offset-xl-0 p-2 mt-5 align-self-start">
    <h5>Book this bike</h5>
    <%= simple_form_for [@bike, @booking] do |b| %>
       <%= b.input :start_date, as: "string", :input_html => { :class => 'd-none' } %>
     <%= b.button :submit, class: 'btn btn-home' %>
     <% end %>
 </div>
+<% end %>
 </div>
 
