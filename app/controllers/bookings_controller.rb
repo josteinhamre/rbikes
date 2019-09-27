@@ -14,17 +14,17 @@ class BookingsController < ApplicationController
     @booking.end_date = Date.parse(params['booking']['start_date'][14, 23])
     if @booking.save
       flash[:notice] = "Your booking has successfully been submitted!"
-      redirect_to profile_path(@profile)
+      redirect_to profile_path
     else
-      # raise
-      render 'new'
+      flash[:notice] = "Your booking was unsucsessful, dates unvailable!"
+      redirect_to bike_path(@bike)
     end
   end
 
   def update
     @booking = Booking.find(params[:id])
     @booking.confirmed_at = Date.today
-    unless @booking.save
+    unless @booking.save!
       flash[:alert] = "Unable to confirm booking!"
     end
     redirect_to profile_path
