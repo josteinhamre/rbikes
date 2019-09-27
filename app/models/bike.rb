@@ -1,13 +1,12 @@
 class Bike < ApplicationRecord
   TYPE = %w[Road Mountain Hybrid TT BMX Cyclocross City]
   belongs_to :user
-  validates :brand, :model, :bike_type, :photo, presence: true
+  validates :brand, :model, :bike_type, :photo, :price, presence: true
   validates :bike_type, inclusion: { in: TYPE }
   has_many :availabilities
   has_many :bookings
   has_many :bikes
   mount_uploader :photo, PhotoUploader
-
 
   def available_range?(start_date, end_date)
     bookings = self.bookings # Get bookings for this bike

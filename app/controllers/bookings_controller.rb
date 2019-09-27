@@ -6,7 +6,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-
     @booking = Booking.new
     @bike = Bike.find(params[:bike_id])
     @booking.bike = @bike
