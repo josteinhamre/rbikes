@@ -14,6 +14,7 @@ const toggleDateInputs = function() {
       dateFormat: 'd-m-Y',
 
 
+
       onChange: function(selectedDates, selectedDate) {
         if (selectedDate === '') {
           endDateInput.disabled = true;

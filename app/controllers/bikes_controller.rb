@@ -1,7 +1,11 @@
 class BikesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
+    if params[].present
+
+    else
     @bikes = Bike.all
+  end
   end
 
   def show
