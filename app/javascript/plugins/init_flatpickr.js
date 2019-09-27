@@ -33,4 +33,19 @@ const toggleDateInputs = function() {
   };
 };
 
-export { toggleDateInputs }
+const dateRangeInputs = function() {
+
+  const rangeInput = document.getElementById('booking_start_date');
+  if (rangeInput) {
+
+    console.log(rangeInput)
+    flatpickr(rangeInput, {
+      inline: true,
+      mode: 'range',
+      minDate: 'today',
+      dateFormat: 'd-m-Y',
+    });
+  };
+};
+
+export { toggleDateInputs, dateRangeInputs }

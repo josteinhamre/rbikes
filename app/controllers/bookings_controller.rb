@@ -1,3 +1,4 @@
+# require 'Date'
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
@@ -5,10 +6,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+
+    @booking = Booking.new
     @bike = Bike.find(params[:bike_id])
     @booking.bike = @bike
     @booking.user = current_user
+    @booking.start_date = Date.parse(params['booking']['start_date'][0, 10])
+    @booking.end_date = Date.parse(params['booking']['start_date'][14, 23])
     if @booking.save
       flash[:notice] = "Your booking has successfully been submitted!"
       redirect_to bike_path(@bike)

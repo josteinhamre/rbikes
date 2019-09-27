@@ -1,6 +1,8 @@
 import "bootstrap";
-import { toggleDateInputs } from '../plugins/init_flatpickr';
+import { toggleDateInputs, dateRangeInputs } from '../plugins/init_flatpickr';
 import { selectTab } from '../components/init_tabs'
+
+dateRangeInputs()
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -8,3 +10,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 selectTab()
+
+

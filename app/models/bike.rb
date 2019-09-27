@@ -9,7 +9,7 @@ class Bike < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
 
-  def available_range(start_date, end_date)
+  def available_range?(start_date, end_date)
     bookings = self.bookings # Get bookings for this bike
     booking_ranges = bookings.map { |b| (b.start_date..b.end_date).to_a }.flatten
     query_range = (start_date..end_date).to_a
