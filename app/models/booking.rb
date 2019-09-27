@@ -3,7 +3,7 @@ class Booking < ApplicationRecord
   belongs_to :bike
   validates :start_date, :end_date, presence: true
   validate :end_date_after_start_date
-  validate :available?
+  validate :available
 
   private
 
@@ -15,7 +15,9 @@ class Booking < ApplicationRecord
     end
   end
 
-  def available?
-    errors.add(:end_date, "date unvailable") unless bike.available_range?(start_date, end_date)
+  def available
+    if new_record?
+      errors.add(:bike, "unvailable for theese dates") unless bike.available_range?(start_date, end_date)
+    end
   end
 end
