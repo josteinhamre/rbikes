@@ -73,7 +73,8 @@ p.product-card-pricing {
 
 .card-booking h5 {
   color: #228B22;
-  margin: 0;
+  margin-bottom: 0;
+  margin-right: 8px;
 }
 
 .card-product {
@@ -83,4 +84,21 @@ p.product-card-pricing {
 .card-product:hover {
   transform: scale(1.01);
   text-decoration: none;
+}
+
+.card-profile {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+.card-profile img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-profile .card-profile-infos {
+  text-decoration: none;
+  color: black;
 }

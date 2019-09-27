@@ -13,8 +13,6 @@ const toggleDateInputs = function() {
       minDate: 'today',
       dateFormat: 'd-m-Y',
 
-
-
       onChange: function(selectedDates, selectedDate) {
         if (selectedDate === '') {
           endDateInput.disabled = true;

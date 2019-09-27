@@ -1,17 +1,14 @@
-
-<div class="container">
-  <% @bikes.each do |bike| %>
-      <!-- <div class="card-product card-product-index margin-top-15"> -->
+<div class="row">
+  <div class="col-12 offset-0 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+    <% @bikes.each do |bike| %>
     <%= link_to bike_path(bike), class: "card-product card-product-index margin-top-15" do %>
-        <%= cl_image_tag bike.photo %>
-        <div class="card-product-infos">
-          <h2><%= bike.brand %> - <%= bike.model %></h2>
-          <p><%= bike.description.length > 170 ? bike.description[0, 170].concat('...') : bike.description %></p>
-          <p class="product-card-pricing"><%= bike.price %> NOK a day</p>
-        </div>
+    <%= cl_image_tag bike.photo %>
+    <div class="card-product-infos">
+      <h2><%= bike.brand %> - <%= bike.model %></h2>
+      <p><%= bike.description.length > 170 ? bike.description[0, 170].concat('...') : bike.description %></p>
+      <p class="product-card-pricing"><%= bike.price %> NOK a day</p>
+    </div>
     <% end %>
-      <!-- </div> -->
-  <% end %>
-
+    <% end %>
+  </div>
 </div>
-

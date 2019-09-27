@@ -40,3 +40,18 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+
+.btn-home {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #26323e;
+  transition: background 0.3s ease;
+}
+
+.btn-home:hover {
+  background: #F5F5F5;
+  color: #26323e;
+  border-color: #D8D8D8;
+}
