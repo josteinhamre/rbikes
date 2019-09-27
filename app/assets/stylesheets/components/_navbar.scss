@@ -23,3 +23,20 @@
 .nav-item {
   margin-left: 4px;
 }
+
+.nav-home {
+  background: none;
+}
+
+.nav-home h2 {
+  color: white;
+}
+
+.nav-home .navbar-nav a.nav-link {
+  color: white;
+   text-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+
+.nav-home .navbar-nav a.nav-link:hover {
+  color: rgba(38, 50, 62, 0.5);
+}
